@@ -1,4 +1,5 @@
-Node.js Deployment
+# Node.js Deployment
+
 Create Free AWS Account
 Create and Lauch an EC2 instance and SSH into machine
 Install Node and NPM
