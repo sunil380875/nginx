@@ -95,3 +95,8 @@ sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
 # Only valid for 90 days, test the renewal process with
 certbot renew --dry-run
 ```
+
+#DNS record
+A subdomain-name ip
+A @ ip
+CNAME www xyz.com
