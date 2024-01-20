@@ -22,3 +22,9 @@ docker exec containerId -ls || any os command
 # Going inside container
 
 docker exec -it containerId bash
+
+# Port mapping and expose to local
+
+docker run -it -p 1000:1000 image-name
+1000:1000
+local container
