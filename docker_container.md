@@ -7,8 +7,8 @@ eg: docker run -it ubuntu //-it mean iter-active
 
 # Basic commands
 
-docker container -ls // List all running container
-docker container -la -a // List all container (start + stop)
+docker container ls // List all running container
+docker container ls -a // List all container (start + stop)
 
 # start a stop container
 
