@@ -28,3 +28,7 @@ docker exec -it containerId bash
 docker run -it -p 1000:1000 image-name
 1000:1000
 local container
+
+
+Delete All Previous container
+docker container prune -f
