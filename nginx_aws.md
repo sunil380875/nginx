@@ -100,3 +100,12 @@ certbot renew --dry-run
 A subdomain-name ip
 A @ ip
 CNAME www xyz.com
+
+
+
+Try to run the following 
+two commands: sudo fuser -k 80/tcp 
+sudo fuser -k 443/tcp 
+Then execute sudo service nginx restart If that worked, 
+your hosting provider might be installing Apache on your server by default during a fresh install, 
+so keep reading for a more permenant fix. If that didn't work, keep reading to identify the issue.
