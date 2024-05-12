@@ -109,3 +109,46 @@ sudo fuser -k 443/tcp
 Then execute sudo service nginx restart If that worked, 
 your hosting provider might be installing Apache on your server by default during a fresh install, 
 so keep reading for a more permenant fix. If that didn't work, keep reading to identify the issue.
+
+
+
+
+If you want multiple host then
+
+sudo ln -s /etc/nginx/sites-available/test1.coderskm.website /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/test2.coderskm.website /etc/nginx/sites-enabled/
+
+FOR site1.coderskm.website file
+
+server {
+     listen 80;
+     listen [::]:80;
+    server_name site1.coderskm.website;
+
+    location / {
+        proxy_pass http://localhost:8001;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+
+
+FOR site1.coderskm.website file
+server {
+     listen 80;
+     listen [::]:80;
+    server_name site2.coderskm.website;
+
+    location / {
+        proxy_pass http://localhost:8002;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+
